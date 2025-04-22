@@ -1,0 +1,108 @@
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+      /* Header */
+      .nav-links {
+          position: fixed;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          background-color: white;
+          flex-direction: column;
+          align-items: center;
+          padding: 1rem 0;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          transform: translateY(-150%);
+          transition: transform 0.3s ease;
+          z-index: 999;
+      }
+  
+      .nav-links.active {
+          transform: translateY(0);
+      }
+  
+      .nav-links li {
+          margin: 0.5rem 0;
+      }
+  
+      .mobile-menu-toggle {
+          display: block;
+      }
+  
+      /* Hero */
+      .hero-content h2 {
+          font-size: 2.2rem;
+      }
+  
+      .hero-buttons {
+          flex-direction: column;
+          align-items: center;
+      }
+  
+      /* About */
+      .about-content {
+          flex-direction: column;
+      }
+  
+      .stats {
+          flex-direction: column;
+          align-items: center;
+      }
+  
+      .stat-item {
+          margin-bottom: 1.5rem;
+      }
+  
+      /* Volunteer */
+      .volunteer-content {
+          flex-direction: column;
+      }
+  
+      /* Donate */
+      .donate-options {
+          flex-direction: column;
+          align-items: center;
+      }
+  
+      .donate-option {
+          width: 100%;
+          max-width: none;
+      }
+  
+      /* Footer */
+      .footer-content {
+          flex-direction: column;
+      }
+  
+      /* Donation Page */
+      .donation-content {
+          flex-direction: column;
+      }
+  
+      .amount-options {
+          grid-template-columns: repeat(2, 1fr);
+      }
+  }
+  
+  @media screen and (max-width: 480px) {
+      .hero-content h2 {
+          font-size: 1.8rem;
+      }
+  
+      .hero-content p {
+          font-size: 1rem;
+      }
+  
+      .btn {
+          padding: 0.7rem 1.5rem;
+          font-size: 0.9rem;
+      }
+  
+      .section-subtitle {
+          font-size: 0.9rem;
+      }
+  
+      .form-row {
+          flex-direction: column;
+          gap: 0;
+      }
+  }

@@ -1,0 +1,387 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate to PawsFeed</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 768px)">
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="assets/logo.png" alt="PawsFeed Logo" class="logo-img">
+                    <div>
+                        <h1>PawsFeed</h1>
+                        <p>Nourishing Street Dogs, One Meal at a Time</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#locations">Locations</a></li>
+                    <li><a href="index.html#volunteer">Volunteer</a></li>
+                    <li><a href="index.html#donate">Donate</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="donation-page">
+        <div class="container">
+            <div class="donation-header">
+                <a href="index.html#donate" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Back to donation options
+                </a>
+                <h2>Make a Donation</h2>
+                <p id="donation-type-message">Your contribution helps feed street dogs in need</p>
+            </div>
+
+            <div class="donation-content">
+                <div class="donation-form-container">
+                    <form id="donationForm">
+                        <div class="donation-amount">
+                            <h3>Select Amount</h3>
+                            <div class="amount-options">
+                                <button type="button" class="amount-option" data-amount="100">₹100</button>
+                                <button type="button" class="amount-option" data-amount="250">₹250</button>
+                                <button type="button" class="amount-option" data-amount="500">₹500</button>
+                                <button type="button" class="amount-option" data-amount="1000">₹1000</button>
+                                <button type="button" class="amount-option" data-amount="custom">Custom</button>
+                            </div>
+                            <div class="custom-amount" id="customAmountField" style="display: none;">
+                                <label for="amount">Enter Amount (₹)</label>
+                                <input type="number" id="amount" name="amount" min="1" step="1">
+                            </div>
+                        </div>
+
+                        <div class="donation-type" id="donationTypeField">
+                            <h3>Donation Type</h3>
+                            <div class="radio-options">
+                                <label>
+                                    <input type="radio" name="donationType" value="one-time" checked>
+                                    <span>One-Time Donation</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="donationType" value="monthly">
+                                    <span>Monthly Donation</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="donor-info">
+                            <h3>Your Information</h3>
+                            <div class="form-group">
+                                <label for="donor-name">Full Name *</label>
+                                <input type="text" id="donor-name" name="donor-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="donor-email">Email *</label>
+                                <input type="email" id="donor-email" name="donor-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="donor-phone">Phone Number *</label>
+                                <input type="tel" id="donor-phone" name="donor-phone" required>
+                            </div>
+                        </div>
+
+                        <div class="payment-method">
+                            <h3>Payment Method</h3>
+                            <div class="payment-options">
+                                <label>
+                                    <input type="radio" name="paymentMethod" value="qr" checked>
+                                    <span>Pay via QR Code</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="paymentMethod" value="upi">
+                                    <span>Pay via UPI App</span>
+                                </label>
+                            </div>
+
+                            <div class="upi-payment" id="qrPaymentSection">
+                                <div class="upi-qr-code">
+                                    <h3>Scan to Pay via UPI</h3>
+                                    <div id="qr-code-container"></div>
+                                    <div id="qr-amount-display"></div>
+                                </div>
+                                <p class="upi-note">Scan the QR code using any UPI app to complete your payment</p>
+                            </div>
+
+                            <div class="upi-payment" id="upiPaymentSection" style="display: none;">
+                                <div class="form-group">
+                                    <label for="upi-id">UPI ID *</label>
+                                    <input type="text" id="upi-id" name="upi-id" placeholder="yourname@upi" required>
+                                </div>
+                                <p class="upi-note">After submitting, you'll be redirected to your UPI app to complete the payment.</p>
+                                <div class="upi-apps">
+                                    <img src="assets/google_pay.png" alt="Google Pay">
+                                    <img src="assets/phonepe.png" alt="PhonePe">
+                                    <img src="assets/paytm.png" alt="Paytm">
+                                    <img src="assets/bhim.png" alt="BHIM">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group checkbox">
+                            <label>
+                                <input type="checkbox" name="receipt" checked>
+                                <span>Email me a receipt</span>
+                            </label>
+                        </div>
+
+                        <div class="form-group checkbox">
+                            <label>
+                                <input type="checkbox" name="anonymous">
+                                <span>Donate anonymously</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-donate">
+                            <i class="fas fa-paw"></i> Complete Donation
+                        </button>
+                    </form>
+                </div>
+
+                <div class="donation-impact">
+                    <div class="impact-card">
+                        <h3>Your Impact</h3>
+                        <div class="impact-item">
+                            <div class="impact-icon">
+                                <i class="fas fa-dog"></i>
+                            </div>
+                            <div class="impact-text">
+                                <span class="impact-number" id="meals-provided">0</span>
+                                <span class="impact-label">meals provided</span>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <div class="impact-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="impact-text">
+                                <span class="impact-number" id="dogs-helped">0</span>
+                                <span class="impact-label">dogs helped</span>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <div class="impact-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="impact-text">
+                                <span class="impact-number" id="days-covered">0</span>
+                                <span class="impact-label">days of care</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial">
+                        <blockquote>
+                            "Every rupee donated to PawsFeed goes directly to feeding street dogs. We keep administrative costs low so your donation has maximum impact."
+                        </blockquote>
+                        <p>- Abhijeet G., Founder</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/logo.png" alt="PawsFeed Logo">
+                        <h3>PawsFeed</h3>
+                    </div>
+                    <p>Nourishing Street Dogs, One Meal at a Time</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#donate">Donate</a></li>
+                        <li><a href="index.html#volunteer">Volunteer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> contact@pawsfeedpune.org</li>
+                        <li><i class="fas fa-phone"></i> +91 9044335555</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 PawsFeed. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/donation.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate to PawsFeed</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 768px)">
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header remains the same -->
+    <main class="donation-page">
+        <div class="container">
+            <div class="donation-header">
+                <a href="index.html#donate" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Back to donation options
+                </a>
+                <h2>Make a Donation</h2>
+                <p id="donation-type-message">Your contribution helps feed street dogs in need</p>
+            </div>
+
+            <div class="donation-content">
+                <div class="donation-form-container">
+                    <form id="donationForm">
+                        <!-- Amount selection remains the same -->
+                        <div class="donation-amount">
+                            <h3>Select Amount</h3>
+                            <div class="amount-options">
+                                <button type="button" class="amount-option" data-amount="100">₹100</button>
+                                <button type="button" class="amount-option" data-amount="250">₹250</button>
+                                <button type="button" class="amount-option" data-amount="500">₹500</button>
+                                <button type="button" class="amount-option" data-amount="1000">₹1000</button>
+                                <button type="button" class="amount-option" data-amount="custom">Custom</button>
+                            </div>
+                            <div class="custom-amount" id="customAmountField" style="display: none;">
+                                <label for="amount">Enter Amount (₹)</label>
+                                <input type="number" id="amount" name="amount" min="1" step="1">
+                            </div>
+                        </div>
+
+                        <!-- Donation type remains the same -->
+                        <div class="donation-type" id="donationTypeField">
+                            <h3>Donation Type</h3>
+                            <div class="radio-options">
+                                <label>
+                                    <input type="radio" name="donationType" value="one-time" checked>
+                                    <span>One-Time Donation</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="donationType" value="monthly">
+                                    <span>Monthly Donation</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Donor info remains the same -->
+                        <div class="donor-info">
+                            <h3>Your Information</h3>
+                            <div class="form-group">
+                                <label for="donor-name">Full Name *</label>
+                                <input type="text" id="donor-name" name="donor-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="donor-email">Email *</label>
+                                <input type="email" id="donor-email" name="donor-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="donor-phone">Phone Number *</label>
+                                <input type="tel" id="donor-phone" name="donor-phone" required>
+                            </div>
+                        </div>
+
+                        <!-- Updated Payment Method section -->
+                        <div class="payment-method">
+                            <h3>Payment Method</h3>
+                            <div class="payment-options">
+                                <label>
+                                    <input type="radio" name="paymentMethod" value="qr" checked>
+                                    <span>Pay via QR Code</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="paymentMethod" value="app">
+                                    <span>Pay via UPI App</span>
+                                </label>
+                            </div>
+
+                            <div class="upi-payment" id="qrPaymentSection">
+                                <div class="form-group">
+                                    <label for="upi-id">UPI ID (Optional)</label>
+                                    <input type="text" id="upi-id" name="upi-id" placeholder="yourname@upi">
+                                </div>
+
+                                <div class="upi-qr-code">
+                                    <h3>Scan to Pay via UPI</h3>
+                                    <div id="qr-code-container"></div>
+                                    <div id="qr-amount-display"></div>
+                                </div>
+
+                                <p class="upi-note">After submitting, you can scan the QR code with any UPI app to complete the payment.</p>
+                            </div>
+
+                            <div class="upi-app-payment" id="appPaymentSection" style="display: none;">
+                                <p>You'll be redirected to your preferred UPI app after submitting the form to complete the payment.</p>
+                                <div class="upi-apps">
+                                    <img src="assets/google_pay.png" alt="Google Pay">
+                                    <img src="assets/phonepe.png" alt="PhonePe">
+                                    <img src="assets/paytm.png" alt="Paytm">
+                                    <img src="assets/bhim.png" alt="BHIM">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Checkboxes remain the same -->
+                        <div class="form-group checkbox">
+                            <label>
+                                <input type="checkbox" name="receipt" checked>
+                                <span>Email me a receipt</span>
+                            </label>
+                        </div>
+
+                        <div class="form-group checkbox">
+                            <label>
+                                <input type="checkbox" name="anonymous">
+                                <span>Donate anonymously</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-donate">
+                            <i class="fas fa-paw"></i> Complete Donation
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Impact section remains the same -->
+                <div class="donation-impact">
+                    <!-- ... existing impact content ... -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer remains the same -->
+
+    <script src="js/donation.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
