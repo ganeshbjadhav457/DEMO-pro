@@ -640,8 +640,8 @@ const DonationPage = (function () {
             };
 
             try {
-                // const response = await fetch('http://localhost:5000/api/donations', {
-                 const response = await fetch('https://demo-pro-ktb1.onrender.com', {
+                 const response = await fetch('http://localhost:5000/api/donations', {
+                 
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
